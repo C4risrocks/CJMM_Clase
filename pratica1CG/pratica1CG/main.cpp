@@ -1,25 +1,20 @@
 //Semestre 2018 - 2
 //************************************************************//
 //************************************************************//
-//************** Alumno (s): Moreno Marín Christian    *******//
-//*************				Visual 2015					******//
+//************** Alumno (s):Moreno Marin Christian      ******//
 //*************											******//
+//*************		Visual 2017							******//
 //************************************************************//
-
-//#include <gl/gl.h>     // The GL Header File
-//#include <GL/glut.h>   // The GL Utility Toolkit (Glut) Header
-//#include <stdlib.h>
 #include "Main.h"
 
-float angleX = 0.0f;
-float angleY = 0.0f;
-float angleZ = 0.0f;
-float transX = 0.0f;
-float transY = 0.0f;
 float transZ = -5.0f;
+int screenW = 0.0;
+int screenH = 0.0;
+float roty = 0.0;
+float rotx = 0.0;
 
 
-void InitGL ( GLvoid )     // Inicializamos parametros
+void InitGL ( void )     // Inicializamos parametros
 {
 
 	//glShadeModel(GL_SMOOTH);							// Habilitamos Smooth Shading
@@ -45,9 +40,8 @@ void prisma(void)
 				{-0.5 ,0.5, 0.5},    //Coordenadas Vértice 7 V7
 				};
 
-
 		glBegin(GL_POLYGON);	//Front
-			glColor3f(1.0,0.0,0.0);
+			//glColor3f(1.0,0.0,0.0);
 			glVertex3fv(vertice[0]);
 			glVertex3fv(vertice[4]);
 			glVertex3fv(vertice[7]);
@@ -55,7 +49,7 @@ void prisma(void)
 		glEnd();
 
 		glBegin(GL_POLYGON);	//Right
-			glColor3f(0.0,0.0,1.0);
+			//glColor3f(0.0,0.0,1.0);
 			glVertex3fv(vertice[0]);
 			glVertex3fv(vertice[3]);
 			glVertex3fv(vertice[5]);
@@ -63,7 +57,7 @@ void prisma(void)
 		glEnd();
 
 		glBegin(GL_POLYGON);	//Back
-			glColor3f(0.0,1.0,0.0);
+			//glColor3f(0.0,1.0,0.0);
 			glVertex3fv(vertice[6]);
 			glVertex3fv(vertice[5]);
 			glVertex3fv(vertice[3]);
@@ -71,7 +65,7 @@ void prisma(void)
 		glEnd();
 
 		glBegin(GL_POLYGON);  //Left
-			glColor3f(1.0,1.0,1.0);
+			//glColor3f(1.0,1.0,1.0);
 			glVertex3fv(vertice[1]);
 			glVertex3fv(vertice[7]);
 			glVertex3fv(vertice[6]);
@@ -79,8 +73,7 @@ void prisma(void)
 		glEnd();
 
 		glBegin(GL_POLYGON);  //Bottom
-	
-		glColor3f(0.4,0.2,0.6);
+			//glColor3f(0.4,0.2,0.6);
 			glVertex3fv(vertice[0]);
 			glVertex3fv(vertice[1]);
 			glVertex3fv(vertice[2]);
@@ -88,7 +81,7 @@ void prisma(void)
 		glEnd();
 
 		glBegin(GL_POLYGON);  //Top
-			glColor3f(0.8,0.2,0.4);
+			//glColor3f(0.8,0.2,0.4);
 			glVertex3fv(vertice[4]);
 			glVertex3fv(vertice[5]);
 			glVertex3fv(vertice[6]);
@@ -96,67 +89,230 @@ void prisma(void)
 		glEnd();
 }
 
-void display(void)   // Creamos la funcion donde se dibuja
+void display ( void )   // Creamos la funcion donde se dibuja
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	// Limiamos pantalla y Depth Buffer
-	glMatrixMode(GL_MODELVIEW);
+	//glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	//Poner Código Aquí.
-	glRotatef(angleX, 1, 0, 0);
+		glTranslatef(0.0f, 0.0f, transZ);
+		glRotatef(roty, 0, 1, 0);
+		glRotatef(rotx, 1, 0, 0);
+		//Poner Código Aquí.
+		//cabeza
+		glPushMatrix();
+			glColor3f(1,0,0);
+			glScalef(4, 4, 4);
+			prisma();
+		glPopMatrix();
 
-	glTranslatef(transX, 0, transZ);
 
-	prisma();
-	glTranslatef(-1, 0, 0);
-	prisma();
-	glTranslatef(-1, 0, 0);
-	prisma();
-	glTranslatef(0, -1, 0);
-	prisma();
-	glTranslatef(0, -1, 0);
-	prisma();
-	glTranslatef(0, -1, 0);
-	prisma();
-	glTranslated(1, 0, 0);
-	prisma();
-	glTranslatef(1, 0, 0);
-	prisma();
+		//cuello
+		glTranslatef(0, -3, 0);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+			glScalef(3, 2, 3);
+			prisma();
+		glPopMatrix();
+		
 
-	glTranslatef(2, 0, 0);
-	prisma();
-	glTranslatef(0, 1, 0);
-	prisma();
-	glTranslatef(0, 1, 0);
-	prisma();
-	glTranslatef(0, 1, 0);
-	prisma();
-	glTranslatef(1, 0, 0);
-	prisma();
-	glTranslatef(1, 0, 0);
-	prisma();
-	glTranslatef(0, -1, 0);
-	prisma();
-	glTranslatef(1, 1, 0);
-	prisma();
-	glTranslatef(1, 0, 0);
-	prisma();
-	glTranslatef(0, -1, 0);
-	prisma();
-	glTranslatef(0, -1, 0);
-	prisma();
-	glTranslatef(0, -1, 0);
-	prisma();
+		//torso
+		glTranslatef(0, -6, 0);
+		glColor3f(0, 0, 1);
+		glPushMatrix();
+			glScalef(10, 10, 4);
+			prisma();
+		glPopMatrix();
+
+		//pierna izquierda
+		//muslo
+		glTranslatef(2.5, -7.5, 0);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(2, 5, 2);
+		prisma();
+		glPopMatrix();
+
+		//rodilla
+		glTranslatef(0, -3, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(2, 1, 2);
+		prisma();
+		glPopMatrix();
+		
+		//Espinilla
+		glTranslatef(0, -3, 0);
+		glColor3f(0, 0, 1);
+		glPushMatrix();
+		glScalef(2, 5, 2);
+		prisma();
+		glPopMatrix();
+
+		//Tobillo
+		glTranslatef(0, -2.75, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(2, 0.5, 2);
+		prisma();
+		glPopMatrix();
+
+		//Pie
+		glTranslatef(0, -1.25, 1);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(2, 2, 4);
+		prisma();
+		glPopMatrix();
+
+		//Pierna Derecha
+		//Muslo
+		glTranslatef(-5, 10, -1);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(2, 5, 2);
+		prisma();
+		glPopMatrix();
+
+		//rodilla
+		glTranslatef(0, -3, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(2, 1, 2);
+		prisma();
+		glPopMatrix();
+
+		//Espinilla
+		glTranslatef(0, -3, 0);
+		glColor3f(0, 0, 1);
+		glPushMatrix();
+		glScalef(2, 5, 2);
+		prisma();
+		glPopMatrix();
+
+		//Tobillo
+		glTranslatef(0, -2.75, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(2, 0.5, 2);
+		prisma();
+		glPopMatrix();
+
+		//Pie
+		glTranslatef(0, -1.25, 1);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(2, 2, 4);
+		prisma();
+		glPopMatrix();
+
+		//Brazo derecho
+		//Hombro
+		glTranslatef(-3, 21.5, -1);
+		glColor3f(1, 0, 1);
+		glPushMatrix();
+		glScalef(1, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Biceps/Triceps
+		glTranslatef(-2, 0, 0);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(3, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//codo
+		glTranslatef(-1.75, 0, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(0.5, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Antebrazo
+		glTranslatef(-2.25, 0, 0);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(4, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Muñeca
+		glTranslatef(-2.25, 0, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(0.5, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Mano
+		glTranslatef(-1.25, 0, 0);
+		glColor3f(1, 1, 1);
+		glPushMatrix();
+		glScalef(2, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Brazo Izquierdo
+		//Hombro
+		glTranslatef(20.5, 0, 0);
+		glColor3f(1, 0, 1);
+		glPushMatrix();
+		glScalef(1, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Biceps/Triceps
+		glTranslatef(2, 0, 0);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(3, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//codo
+		glTranslatef(1.75, 0, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(0.5, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Antebrazo
+		glTranslatef(2.25, 0, 0);
+		glColor3f(0, 1, 0);
+		glPushMatrix();
+		glScalef(4, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Muñeca
+		glTranslatef(2.25, 0, 0);
+		glColor3f(1, 0, 0);
+		glPushMatrix();
+		glScalef(0.5, 2, 2);
+		prisma();
+		glPopMatrix();
+
+		//Mano
+		glTranslatef(1.25, 0, 0);
+		glColor3f(1, 1, 1);
+		glPushMatrix();
+		glScalef(2, 2, 2);
+		prisma();
+		glPopMatrix();
+		
+
 
 
 
 
 		
   											
-
-    glutSwapBuffers ( );
-    //glFlush();
-    // Swap The Buffers
+  glutSwapBuffers ( );
+  // Swap The Buffers
 }
 
 void reshape ( int width , int height )   // Creamos funcion Reshape
@@ -172,8 +328,10 @@ void reshape ( int width , int height )   // Creamos funcion Reshape
 	glLoadIdentity();
 
 	// Tipo de Vista
-	//glOrtho(-10,10,-10,10,0.1,20);	
-	glFrustum (-2,2,-2,1,0.1, 80.0);
+	//glOrtho(-5,5,-5,5,0.2,20);	
+	glFrustum (-0.1, 0.1,-0.1, 0.1, 0.1, 100.0);
+
+	glMatrixMode(GL_MODELVIEW);							// Seleccionamos Modelview Matrix
 }
 
 void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
@@ -181,21 +339,19 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 	switch ( key ) {
 		case 'w':
 		case 'W':
-			transZ +=0.2f;
-			printf("Posicion en Z: %f\n", transZ);
+			transZ +=0.3f;
 			break;
 		case 's':
 		case 'S':
-			transZ -=0.2f;
-			printf("Posicion en Z: %f\n", transZ);
+			transZ -= 0.3f;
 			break;
 		case 'a':
 		case 'A':
-			transX -=0.2f;
+			
 			break;
 		case 'd':
 		case 'D':
-			transX +=0.2f;
+	
 			break;
 		case 27:        // Cuando Esc es presionado...
 			exit ( 0 );   // Salimos del programa
@@ -209,21 +365,17 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 void arrow_keys ( int a_keys, int x, int y )  // Funcion para manejo de teclas especiales (arrow keys)
 {
   switch ( a_keys ) {
-    case GLUT_KEY_UP:     // Presionamos tecla ARRIBA...
-		angleX += 1.0f;
+    case GLUT_KEY_UP:		// Presionamos tecla ARRIBA...
+		rotx += 0.5;
 		break;
-      //glutFullScreen ( ); // Full Screen Mode
-      //break;
-    case GLUT_KEY_DOWN:               // Presionamos tecla ABAJO...
-		angleX -= 1.0f;
+    case GLUT_KEY_DOWN:		// Presionamos tecla ABAJO...
+		rotx -= 0.5;
 		break;
-      //glutReshapeWindow ( 500, 500 ); // Cambiamos tamano de Ventana
-      //break;
 	case GLUT_KEY_LEFT:
-		angleY += 1.0f;
+		roty -= 0.5;
 		break;
 	case GLUT_KEY_RIGHT:
-		angleY -= 1.0f;
+		roty += 0.5;
 		break;
     default:
       break;
@@ -237,9 +389,13 @@ int main ( int argc, char** argv )   // Main Function
   glutInit            (&argc, argv); // Inicializamos OpenGL
   //glutInitDisplayMode (GLUT_RGBA | GLUT_SINGLE | GLUT_DEPTH); // Display Mode (Clores RGB y alpha | Buffer Sencillo )
   glutInitDisplayMode (GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); // Display Mode (Clores RGB y alpha | Buffer Doble )
+  screenW = glutGet(GLUT_SCREEN_WIDTH);
+  screenH = glutGet(GLUT_SCREEN_HEIGHT);
   glutInitWindowSize  (500, 500);	// Tamaño de la Ventana
   glutInitWindowPosition (0, 0);	//Posicion de la Ventana
-  glutCreateWindow    ("Practica 3"); // Nombre de la Ventana
+  glutCreateWindow    ("Practica 4"); // Nombre de la Ventana
+  printf("Resolution H: %i \n", screenW);
+  printf("Resolution V: %i \n", screenH);
   InitGL ();						// Parametros iniciales de la aplicacion
   glutDisplayFunc     ( display );  //Indicamos a Glut función de dibujo
   glutReshapeFunc     ( reshape );	//Indicamos a Glut función en caso de cambio de tamano
