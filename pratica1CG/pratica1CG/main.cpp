@@ -16,8 +16,8 @@
 	O mueve el dedo anular
 	P mueve el dedo Meñique
 	
-	UNA VERSION(COMMIT) MUEVE LOS DEDOS DE MANERA MAS NATURAL PERO MUEVE A LOS DEMAS CON EL Y
-	Y LA OTRA VERSION MUEVE CADA DEDO PERO DE UNA MANERA RARA (CADA FALANGE SOBRE SU CENTRO)*/
+	////////////VERSION ARREGLADA///////////////*/
+
 #include "Main.h"
 
 float angHombro = 0.0f;
@@ -185,12 +185,11 @@ void display ( void )   // Creamos la funcion donde se dibuja
 	glPopMatrix();
 
 	//Dedo pulgar---------------------------------------------------------------------------------------
-
+	glPushMatrix();
 	//Falange1
 	glTranslatef(0, 1.25, 0);
-	
-	glPushMatrix();
 	glRotatef(angPulgar, 1, 0, 0);
+	glPushMatrix();
 	glScalef(0.4, 0.5, 0.4);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -198,20 +197,22 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2
 	glTranslatef(0, 0.5, 0);
-	
-	glPushMatrix();
 	glRotatef(angPulgar, 1, 0, 0);
+	glPushMatrix();
 	glScalef(0.4, 0.5, 0.4);
 	glColor3f(1, 0, 0);
 	prisma();
 	glPopMatrix();
+	glPopMatrix();////////////////////////////////////
 
-	//Dedo indice--------------------------------------------------------------------------------
-	//Falange1
-	glTranslatef(1.25, -0.9, 0);
 	
+				  
+	//Dedo indice--------------------------------------------------------------------------------
 	glPushMatrix();
+	//Falange1
+	glTranslatef(1.25, 0.85, 0);
 	glRotatef(angIndice, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -219,9 +220,8 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2
 	glTranslatef(0.5, 0, 0);
-	
-	glPushMatrix();
 	glRotatef(angIndice, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -229,20 +229,23 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3
 	glTranslatef(0.5, 0, 0);
-	
-	glPushMatrix();
 	glRotatef(angIndice, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
 	glPopMatrix();
+	glPopMatrix();//////////////////////////////////////
 
-	//Dedo medio--------------------------------------------------------------------------------------
-	//Falange1 medio
-	glTranslatef(-1, -0.6, 0);
 	
+				  
+	//Dedo medio--------------------------------------------------------------------------------------
 	glPushMatrix();
+	//Falange1 medio
+	glTranslatef(2.25, 0.85, 0);
+	glTranslatef(-1, -0.6, 0);
 	glRotatef(angMedio, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -250,8 +253,8 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2 medio
 	glTranslatef(0.55, 0, 0);
-	glPushMatrix();
 	glRotatef(angMedio, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.6, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -259,20 +262,23 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3 medio
 	glTranslatef(0.6, 0, 0);
-	
-	glPushMatrix();
 	glRotatef(angMedio, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.6, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
 	glPopMatrix();
+	glPopMatrix();////////////////////////////////////
 
-	//Dedo Anular-----------------------------------------------------------------------------------------
-	//Falange1 Anular
-	glTranslatef(-1.15, -0.6, 0);
 	
+				  
+	//Dedo Anular-----------------------------------------------------------------------------------------
 	glPushMatrix();
+	//Falange1 Anular
+	glTranslatef(2.4, 0.25, 0);
+	glTranslatef(-1.15, -0.6, 0);
 	glRotatef(angAnular, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -280,9 +286,8 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2 Anular
 	glTranslatef(0.5, 0, 0);
-	
-	glPushMatrix();
 	glRotatef(angAnular, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -290,20 +295,23 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3 Anular
 	glTranslatef(0.5, 0, 0);
-	
-	glPushMatrix();
 	glRotatef(angAnular, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
 	glPopMatrix();
+	glPopMatrix();/////////////////////////////////////////
 
-	//Dedo Meñique-----------------------------------------------------------------------------------
-	//Falange1 Meñique
-	glTranslatef(-1, -0.5, 0);
 	
+				  
+	//Dedo Meñique-----------------------------------------------------------------------------------
 	glPushMatrix();
+	//Falange1 Meñique
+	glTranslatef(2.25, -0.35, 0);
+	glTranslatef(-1, -0.5, 0);
 	glRotatef(angMeñique, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -311,9 +319,8 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2 Meñique
 	glTranslatef(0.4, 0, 0);
-	
-	glPushMatrix();
 	glRotatef(angMeñique, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.3, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -321,12 +328,12 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3 Meñique
 	glTranslatef(0.25, 0, 0);
-	
-	glPushMatrix();
 	glRotatef(angMeñique, 0, -1, 0);
+	glPushMatrix();
 	glScalef(0.2, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
+	glPopMatrix();
 	glPopMatrix();
 
 	
@@ -409,7 +416,7 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 			break;
 
 		case 'u':
-			if (angIndice <= 90)
+			if (angIndice <= 70)
 				angIndice += 1;
 			break;
 		case 'U':
@@ -418,7 +425,7 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 			break;
 
 		case 'i':
-			if (angMedio <= 90)
+			if (angMedio <= 70)
 				angMedio += 1;
 			break;
 		case 'I':
@@ -427,7 +434,7 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 			break;
 
 		case 'o':
-			if (angAnular <= 90)
+			if (angAnular <= 70)
 				angAnular += 1;
 			break;
 		case 'O':
@@ -436,7 +443,7 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 			break;
 
 		case 'p':
-			if (angMeñique <= 90)
+			if (angMeñique <= 70)
 				angMeñique += 1;
 			break;
 		case 'P':
@@ -445,7 +452,7 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 			break;
 
 		case 'j':
-			if (angPulgar <= 90)
+			if (angPulgar <= 70)
 				angPulgar += 1;
 			break;
 		case 'J':
