@@ -188,8 +188,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange1
 	glTranslatef(0, 1.25, 0);
-	glRotatef(angPulgar, 1, 0, 0);
+	
 	glPushMatrix();
+	glRotatef(angPulgar, 1, 0, 0);
 	glScalef(0.4, 0.5, 0.4);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -197,8 +198,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2
 	glTranslatef(0, 0.5, 0);
-	glRotatef(angPulgar, 1, 0, 0);
+	
 	glPushMatrix();
+	glRotatef(angPulgar, 1, 0, 0);
 	glScalef(0.4, 0.5, 0.4);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -217,8 +219,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2
 	glTranslatef(0.5, 0, 0);
-	glRotatef(angIndice, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angIndice, 0, -1, 0);
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -226,8 +229,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3
 	glTranslatef(0.5, 0, 0);
-	glRotatef(angIndice, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angIndice, 0, -1, 0);
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -236,8 +240,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 	//Dedo medio--------------------------------------------------------------------------------------
 	//Falange1 medio
 	glTranslatef(-1, -0.6, 0);
-	glRotatef(angMedio, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angMedio, 0, -1, 0);
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -245,8 +250,8 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2 medio
 	glTranslatef(0.55, 0, 0);
-	glRotatef(angMedio, 0, -1, 0);
 	glPushMatrix();
+	glRotatef(angMedio, 0, -1, 0);
 	glScalef(0.6, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -254,8 +259,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3 medio
 	glTranslatef(0.6, 0, 0);
-	glRotatef(angMedio, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angMedio, 0, -1, 0);
 	glScalef(0.6, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -264,8 +270,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 	//Dedo Anular-----------------------------------------------------------------------------------------
 	//Falange1 Anular
 	glTranslatef(-1.15, -0.6, 0);
-	glRotatef(angAnular, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angAnular, 0, -1, 0);
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -273,8 +280,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2 Anular
 	glTranslatef(0.5, 0, 0);
-	glRotatef(angAnular, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angAnular, 0, -1, 0);
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -282,8 +290,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3 Anular
 	glTranslatef(0.5, 0, 0);
-	glRotatef(angAnular, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angAnular, 0, -1, 0);
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -292,8 +301,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 	//Dedo Meñique-----------------------------------------------------------------------------------
 	//Falange1 Meñique
 	glTranslatef(-1, -0.5, 0);
-	glRotatef(angMeñique, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angMeñique, 0, -1, 0);
 	glScalef(0.5, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
@@ -301,8 +311,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange2 Meñique
 	glTranslatef(0.4, 0, 0);
-	glRotatef(angMeñique, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angMeñique, 0, -1, 0);
 	glScalef(0.3, 0.3, 0.3);
 	glColor3f(1, 0, 0);
 	prisma();
@@ -310,8 +321,9 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 	//Falange3 Meñique
 	glTranslatef(0.25, 0, 0);
-	glRotatef(angMeñique, 0, -1, 0);
+	
 	glPushMatrix();
+	glRotatef(angMeñique, 0, -1, 0);
 	glScalef(0.2, 0.3, 0.3);
 	glColor3f(0, 1, 0);
 	prisma();
