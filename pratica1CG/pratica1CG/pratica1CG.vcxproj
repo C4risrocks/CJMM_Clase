@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="include\Main.h" />
+    <ClInclude Include="p8\texture.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Main.h" />
+    <ClCompile Include="p8\main_prac8_texto.cpp" />
+    <ClCompile Include="p8\texture.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B0E3A742-0D04-4664-96AC-2EF2ED7C7150}</ProjectGuid>
@@ -93,7 +95,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
     </ClCompile>
