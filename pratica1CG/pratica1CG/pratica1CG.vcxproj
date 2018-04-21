@@ -23,8 +23,8 @@
     <ClInclude Include="p8\texture.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="p9\main_prac9_texto.cpp" />
-    <ClCompile Include="p9\texture.cpp" />
+    <ClCompile Include="p8\main_prac8_texto.cpp" />
+    <ClCompile Include="p8\texture.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B0E3A742-0D04-4664-96AC-2EF2ED7C7150}</ProjectGuid>
