@@ -19,10 +19,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="p8\main_prac8_texto.cpp">
+    <ClCompile Include="p9\main_prac9_texto.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="p8\texture.cpp">
+    <ClCompile Include="p9\texture.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
